@@ -258,8 +258,21 @@ int main(){
     positionIniale += turn_right(deplacement);
     std::cout << "Le garde tourne à droite, la nouvelle position est :" << positionIniale << std::endl; */
 
-    std::ifstream file;
+/*     std::ifstream file;
     file.open("../../src/carte.txt");
+    if (!file.is_open()) {
+        std::cout << "Fichier introuvable" << std::endl;
+         return 1;
+    }
+
+    auto input_structure = parse_input(file);
+    WalkResult resultatFinal = mouvementGarde(input_structure);
+    std::cout << "La position finale est " << resultatFinal.final_position << std::endl;
+    std::cout << "Le nombre de positions différentes visitées est " << resultatFinal.visited_positions.size()-1 << std::endl;
+    std::cout << "Le nombre de pas total est " << resultatFinal.steps_taken << std::endl; */
+
+    std::ifstream file;
+    file.open("../../src/input_guard_patrol.txt");
     if (!file.is_open()) {
         std::cout << "Fichier introuvable" << std::endl;
          return 1;
